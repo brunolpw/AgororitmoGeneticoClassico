@@ -1,0 +1,43 @@
+#canvas, #littleCanvas, #fitnessCanvas {
+    border: 1px solid #000;
+}
+
+#fitnessCanvas {
+    margin-right: 2rem;
+}
+
+#littleCanvas {
+    margin-top: 2.5rem;
+}
+
+/* #littleCanvas {
+    display: none;
+} */
+
+h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.container, #populatoinReference {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#fitnessReference {
+    width: 100%;
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+#lblPopulation, #lblBestChromosome {
+    margin: 1.5rem;
+}
