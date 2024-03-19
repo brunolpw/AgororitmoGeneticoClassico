@@ -27,11 +27,10 @@ class Genetic {
             _labelBest.innerText = `Best: ${population.chromosomes[0].toString()}`;
 
             const littleCanvas = document.getElementById('littleCanvas');
-                    const ctx = littleCanvas.getContext('2d');
+            const ctx = littleCanvas.getContext('2d');
 
-                    //littleCanvas.style.display = 'block';
-                    ctx.fillStyle = `#${population.chromosomes[0].gene}`;
-                    ctx.fillRect(0, 0, 30, 30);
+            ctx.fillStyle = `#${population.chromosomes[0].gene}`;
+            ctx.fillRect(0, 0, 30, 30);
         
             if (!hasSolution && generation < numMaxGenerations) {
                 population.renderPopulation(this.context);
@@ -44,18 +43,7 @@ class Genetic {
                     console.log(`Número máximo de gerações | ${population.chromosomes[0].gene} | População: ${population.getChromosomeGenes()}`);
                 }
 
-                if (hasSolution) {
-                    //const lblBestChromosome = document.getElementById('lblBestChromosome');
-                    // const littleCanvas = document.getElementById('littleCanvas');
-                    // const ctx = littleCanvas.getContext('2d');
-
-                    // //littleCanvas.style.display = 'block';
-                    // ctx.fillStyle = `#${population.chromosomes[0].gene}`;
-                    // ctx.fillRect(0, 0, 30, 30);
-
-                    //lblBestChromosome.innerText = population.chromosomes[0].toString();
-                    _button.disabled = true;
-                }
+                _button.disabled = hasSolution;
             }
         });
     }

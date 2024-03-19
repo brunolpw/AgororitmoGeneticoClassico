@@ -39,22 +39,12 @@ class Chromosome {
             .reduce((x, y) => x + y, 0);
     }
 
-    // renderBest() {
-    //     this.context.rect(this.positions[0], this.positions[1], 30, 30);
-    //     this.context.fill();
-    //     this.context.fillStyle = `#${this.gene}`;
-    //     this.context.lineWidth = 2;
-    //     this.context.strokeStyle = '#FF00FF';
-    //     this.context.stroke();
-    // }
-
     render() {
         this.context.fillStyle = `#${this.gene}`;
         this.context.fillRect(this.positions[0], this.positions[1], 30, 30);
     }
 
     toString() {
-        //return `{gene: ${this.gene}, fitness: ${this.fitness}, position: {x: ${this.posX}, y: ${this.posY}}}`;
         return `{gene: ${this.gene}, fitness: ${this.fitness}}`;
     }
 }

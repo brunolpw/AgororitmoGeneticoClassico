@@ -33,9 +33,7 @@ class Population {
     }
 
     thereAreSolution(_solution) {
-        const hasSolution = this.chromosomes.filter(x => x.gene == _solution).length;
-
-        return hasSolution > 0;
+        return this.chromosomes.some(x => x.gene == _solutions);
     }
 
     getChromosomeLength() { 
