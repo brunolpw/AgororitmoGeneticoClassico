@@ -15,12 +15,15 @@ util = {
         }
         return color;
     },
+
     randomInt(_maxValue = 1) {
         return Math.floor(Math.random() * _maxValue);
     },
+
     randomDouble(_maxValue = 1, _floatPoint = 2) {
         return Number((Math.random() * _maxValue).toFixed(_floatPoint));
     },
+
     clear(_context) {
         _context.fillStyle = '#FFFFFF';
         _context.fillRect(0, 0, canvas.width, canvas.height);

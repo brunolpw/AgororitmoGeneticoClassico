@@ -14,12 +14,13 @@ function main() {
 
     const genetic = new Genetic(context);
 
-    const sortedFitness = util.randomColor();
+    const solutionFitness = util.randomColor();
 
-    genetic.run(sortedFitness, buttonPopulation, lblPopulation, lblBestChromosome);
+    debugger;
+    genetic.run(solutionFitness, buttonPopulation, lblPopulation, lblBestChromosome);
 
-    lblFitness.innerHTML = `Fitness: <strong>#${sortedFitness}</strong>`;
-    fitnessContext.fillStyle = `#${sortedFitness}`;
+    lblFitness.innerHTML = `Fitness: <strong>#${solutionFitness}</strong>`;
+    fitnessContext.fillStyle = `#${solutionFitness}`;
     fitnessContext.fillRect(0, 0, 30, 30);
 }
 

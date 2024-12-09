@@ -22,7 +22,7 @@ h1 {
     margin-bottom: 2.5rem;
 }
 
-.container, #populatoinReference {
+.container, #populationReference {
     display: flex;
     flex-direction: column;
     justify-content: center;

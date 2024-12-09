@@ -19,7 +19,7 @@ class Genetic {
         let hasSolution = false;
         let generation = 0;
         
-        console.log(`Inicinado... Aptdidão da solução: ${_solution.length}`);
+        console.log(`Iniciando... Aptidão da solução: ${_solution.length}`);
         
         _button.addEventListener('click', () => {
             generation++;
@@ -34,7 +34,7 @@ class Genetic {
         
             if (!hasSolution && generation < numMaxGenerations) {
                 population.renderPopulation(this.context);
-                
+
                 hasSolution = population.thereAreSolution(algorithm.solution);
                 
                 population = algorithm.newPopulation(population, elitism);
