@@ -16,7 +16,6 @@ function main() {
 
     const solutionFitness = util.randomColor();
 
-    debugger;
     genetic.run(solutionFitness, buttonPopulation, lblPopulation, lblBestChromosome);
 
     lblFitness.innerHTML = `Fitness: <strong>#${solutionFitness}</strong>`;
