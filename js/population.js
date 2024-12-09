@@ -33,7 +33,7 @@ class Population {
     }
 
     thereAreSolution(_solution) {
-        return this.chromosomes.some(x => x.gene == _solutions);
+        return this.chromosomes.some(x => x.gene == _solution);
     }
 
     getChromosomeLength() { 
