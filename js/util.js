@@ -28,4 +28,16 @@ util = {
         _context.fillStyle = '#FFFFFF';
         _context.clearRect(0, 0, canvas.width, canvas.height);
     },
+
+    formatBestGeneText(_gene = '', _solution = '') {
+        const lettersSolution = _solution.split('');
+        const lettersGene = _gene.split('');
+
+        return lettersSolution
+            .map((solution, i) => solution === lettersGene[ i ]
+                ? `<strong>${lettersGene[ i ]}</strong>`
+                : lettersGene[ i ])
+            .join()
+            .replaceAll(',', '')
+    }
 }
