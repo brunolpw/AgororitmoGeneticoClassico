@@ -16,13 +16,21 @@
 
     <main class="container">
         <canvas id="canvas" width="500" height="500"></canvas>
-        <div id="fitnessReference">
-            <canvas id="fitnessCanvas" width="30" height="30"></canvas>
-            <label id="lblFitness">Fitness:</label>
+        
+        <div class="references">
+            <div id="fitnessReference">
+                <canvas id="fitnessCanvas" width="30" height="30"></canvas>
+                <label id="lblFitness">Fitness:</label>
+            </div>
+            
+            <div id="IndividualFitnessReference">
+                <canvas id="individualFitnessCanvas" width="30" height="30"></canvas>
+                <label id="lblIndividualFitness">Individual Fitness:</label>
+            </div>
         </div>
-
+            
         <div id="populationReference">
-            <label id="lblPopulation">Population: 0</label>
+            <label id="lblGeneration">Generation: 0</label>
             <button id="btnNextPopulation" type="button">Next generation</button>
             <canvas id="littleCanvas" width="30" height="30"></canvas>
             <label id="lblBestChromosome">Best: </label>
