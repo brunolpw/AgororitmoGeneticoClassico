@@ -15,25 +15,29 @@
     </header>
 
     <main class="container">
-        <canvas id="canvas" width="500" height="500"></canvas>
+        <canvas id="canvas" class="border-solid" width="500" height="500"></canvas>
         
-        <div class="references">
-            <div id="fitnessReference">
-                <canvas id="fitnessCanvas" width="30" height="30"></canvas>
-                <label id="lblFitness">Fitness:</label>
+        <div class="elements">
+            <div class="references">
+                <div class="fitness-reference fitness-reference-solution">
+                    <p>Solution</p>
+                    <canvas id="fitnessCanvas" class="border-solid fit-canvas" width="30" height="30"></canvas>
+                    <label id="lblFitness">Fitness:</label>
+                </div>
+                
+                <div class="fitness-reference fitness-reference-individual">
+                    <p>Individual</p>
+                    <canvas id="individualFitnessCanvas" class="border-solid fit-canvas" width="30" height="30"></canvas>
+                    <label id="lblIndividualFitness">Fitness: <strong>#FFFFFF</strong></label>
+                </div>
             </div>
             
-            <div id="IndividualFitnessReference">
-                <canvas id="individualFitnessCanvas" width="30" height="30"></canvas>
-                <label id="lblIndividualFitness">Individual Fitness:</label>
+            <div id="populationReference">
+                <label id="lblGeneration">Generation: 0</label>
+                <button id="btnNextPopulation" type="button">Next generation</button>
+                <canvas id="littleCanvas" class="border-solid" width="30" height="30"></canvas>
+                <label id="lblBestChromosome">Best: </label>
             </div>
-        </div>
-            
-        <div id="populationReference">
-            <label id="lblGeneration">Generation: 0</label>
-            <button id="btnNextPopulation" type="button">Next generation</button>
-            <canvas id="littleCanvas" width="30" height="30"></canvas>
-            <label id="lblBestChromosome">Best: </label>
         </div>
     </main>
     
