@@ -33,22 +33,13 @@ class Genetic {
             if (this.newPopulation != null) {
                 this.population = this.newPopulation;
             }
-
+            
             const hasSolution = this.population.thereAreSolution(this.algorithm.solution);
-            const littleCanvas = document.getElementById('littleCanvas');
-            const ctx = littleCanvas.getContext('2d');
-
+            
             this.generation++;
             
             _labelPopulation.innerText = `Generation: ${this.generation}`;
-            _labelBest.innerText = `Best: ${this.population.chromosomes[ 0 ].toString()}`;
-
-            this.context.strokeStyle = "green";
-            this.context.stroke()
-            
-            ctx.fillStyle = `#${this.population.chromosomes[0].gene}`;
-            ctx.fillRect(0, 0, 30, 30);
-
+            this.__renderBest(_labelBest);
             this.population.renderPopulation(this.context);
             
             if (!hasSolution) {
@@ -76,9 +67,6 @@ class Genetic {
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             
-            const individualFitnessCanvas = document.getElementById('individualFitnessCanvas');
-            const ctx = individualFitnessCanvas.getContext('2d');
-
             for (let i = chromosomes.length - 1; i >= 0; i--) {
                 individual = chromosomes[ i ];
                 
@@ -90,10 +78,31 @@ class Genetic {
             }
 
             if (index >= 0) {
-                _labelIndividual.innerHTML = `Individual Fitness: <strong>#${chromosomes[index].gene}</strong>`;
-                ctx.fillStyle = `#${chromosomes[ index ].gene}`;
-                ctx.fillRect(0, 0, 30, 30);
+                this.__renderIndividual(_labelIndividual, chromosomes[index]);
             }
         }
+    }
+
+    __renderBest(_labelBest) {
+        const littleCanvas = document.getElementById('littleCanvas');
+        const ctx = littleCanvas.getContext('2d');
+        
+        const best = this.population.chromosomes[ 0 ];
+        const bestGene = util.formatBestGeneText(best.gene, this.solution);
+
+        ctx.fillStyle = `#${best.gene}`;
+        ctx.fillRect(0, 0, 30, 30);
+
+        _labelBest.innerHTML = `Best: {gene: ${bestGene}, fitness: ${best.fitness}}`;
+    }
+
+    __renderIndividual(_labelIndividual, _chromosome) {
+        const individualFitnessCanvas = document.getElementById('individualFitnessCanvas');
+        const ctx = individualFitnessCanvas.getContext('2d');
+        const individualGene = util.formatBestGeneText(_chromosome.gene, this.solution); 
+        
+        _labelIndividual.innerHTML = `Fitness: #${individualGene}`;
+        ctx.fillStyle = `#${_chromosome.gene}`;
+        ctx.fillRect(0, 0, 30, 30);
     }
 }
