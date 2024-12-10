@@ -26,6 +26,6 @@ util = {
 
     clear(_context) {
         _context.fillStyle = '#FFFFFF';
-        _context.fillRect(0, 0, canvas.width, canvas.height);
+        _context.clearRect(0, 0, canvas.width, canvas.height);
     },
 }
