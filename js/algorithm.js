@@ -8,6 +8,21 @@ class Algorithm {
         this.context = _context;
     }
 
+    configSolution(_solution) {
+        this.solution = _solution;
+        return this;
+    }
+
+    configMutationTax(_mutationTax) {
+        this.mutationTax = _mutationTax;
+        return this;
+    }
+
+    configCrossoverTax(_crossoverTax) {
+        this.crossoverTax = _crossoverTax;
+        return this;
+    }
+
     newPopulation(_population, _elitism) {
         const newPopulation = new Population(this.context, _population.populationLength, true, this.solution);
 
